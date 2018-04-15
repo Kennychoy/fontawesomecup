@@ -1,0 +1,663 @@
+<!DOCTYP html>
+<html>
+<head>
+<title>Font Awesome Cup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+
+@media screen and (min-width: 1200px) {
+
+	#control-field {
+		margin-bottom: 0;
+	}
+
+	#game-title {
+		padding-bottom: 2%;
+	}
+	
+	#race-game-btns .row {
+		display: flex;
+	}
+	
+	#race-game-btns .row .col-lg-2 {
+		display: flex;
+	}
+	
+	.col-lg-2 select, .col-lg-2 #stake-container, .col-lg-2 button, .col-lg-2 p {
+		margin: auto;
+	}
+	
+	.col-lg-2 button {
+		width: 80%;
+	}
+	
+	#stake-container {		
+		margin-left: 0;
+		margin-right: 0;
+		width: 80%;
+	}
+	
+	#stake-container p {		
+		font-size: 2rem;
+		text-align: center;
+	}
+	
+	#stake-container input {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	
+	select, .btn-primary, #balance, #result, #pay {
+		display: inline-block;
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+
+	#track-wrapper {
+		background: #009933;
+	}
+
+	.track {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 2rem;
+		border-top-style: dotted;
+		position: relative;
+	}
+
+	.track:after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		border: 1px solid black;
+		top: 0;
+		right: 2%;
+	}
+
+	.track:last-of-type {
+		border-bottom-style: dotted;
+	}
+
+	.track .race-cars {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 3rem;
+		//animation: race 5s linear forwards;
+	}
+
+	@keyframes race {
+		0% {right: 95.5%}
+		10% {right: 85.5%}
+		20% {right: 75.5%}
+		30% {right: 65.5%}
+		40% {right: 55.5%}
+		50% {right: 45.5%}
+		60% {right: 35.5%}
+		70% {right: 25.5%}
+		80% {right: 15.5%}
+		90% {right: 5.5%}
+		100% {right: 2%}
+	}
+
+	@keyframes blingText {
+		0% {color: #ff0000}
+		50% {color: #3366ff}
+		100% {color: #ff0000}
+	}
+
+	.barrier-draw {
+		padding: .5%;	
+		background: black;
+		color: white;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+	#control-field {
+		margin-bottom: 0;
+	}
+
+	#game-title {
+		padding-bottom: 2%;
+	}
+	
+	#race-game-btns .row .col-lg-2 {
+		display: flex;
+		margin-bottom: 20px;
+		height: 30px;
+	}
+	
+	#stake-container {
+		display: flex;
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+	
+	#stake-container p {
+		flex: 1;
+		font-size: 1.2rem;
+	}
+	
+	#stake-container input {
+		flex: 3;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	
+	.col-lg-2 select, .col-lg-2 #stake-container, .col-lg-2 button, .col-lg-2 p {
+		margin: auto;
+	}
+	
+	.col-lg-2 button {
+		width: 50%;
+	}
+	
+	select, .btn-primary, #balance, #result, #pay {
+		display: inline-block;
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+
+	#track-wrapper {
+		background: #009933;
+	}
+
+	.track {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 3rem;
+		border-top-style: dotted;
+		position: relative;
+	}
+
+	.track:after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		border: 1px solid black;
+		top: 0;
+		right: 2%;
+	}
+
+	.track:last-of-type {
+		border-bottom-style: dotted;
+	}
+
+	.track .race-cars {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 3rem;
+		//animation: race 5s linear forwards;
+	}
+
+	@keyframes race {
+		0% {right: 95.5%}
+		10% {right: 85.5%}
+		20% {right: 75.5%}
+		30% {right: 65.5%}
+		40% {right: 55.5%}
+		50% {right: 45.5%}
+		60% {right: 35.5%}
+		70% {right: 25.5%}
+		80% {right: 15.5%}
+		90% {right: 5.5%}
+		100% {right: 2%}
+	}
+
+	@keyframes blingText {
+		0% {color: #ff0000}
+		50% {color: #3366ff}
+		100% {color: #ff0000}
+	}
+
+	.barrier-draw {
+		padding: .5%;	
+		background: black;
+		color: white;
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+
+	#control-field {
+		margin-bottom: 0;
+	}
+
+	#game-title {
+		padding-bottom: 2%;
+	}
+	
+	#race-game-btns .row .col-lg-2 {
+		margin-bottom: 30px;
+		height: 30px;
+	}
+	
+	#betAndStart, #playAgain, #toBeAnnounced{
+		display: flex
+	}
+	
+	.col-lg-2 select, .col-lg-2 #stake-container, .col-lg-2 button {
+		margin: auto;
+	} 
+	
+	.col-lg-2 p {
+		text-align: center
+	}
+	
+	.col-lg-2 button {
+		width: 50%;
+	}
+	
+	#toBeAnnounced p{
+		margin: auto;
+	}
+	
+	.col-lg-2:nth-child(5) p {
+		width: 48%;
+		display: inline-block;
+		font-size: 1.5rem;
+	}
+	
+	#stake-container {
+		display: flex;
+		margin-left: 0;
+		margin-right: 0;
+		width: 80%;
+	}
+	
+	#stake-container p {
+		flex: 1;
+		font-size: 1.2rem;
+		margin-bottom: 0;
+		font-weight: bold;
+	}
+	
+	#stake-container input {
+		flex: 2.5;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	
+	select, .btn-primary, #balance, #result, #pay {
+		display: inline-block;
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+
+	#track-wrapper {
+		background: #009933;
+	}
+
+	.track {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 3rem;
+		border-top-style: dotted;
+		position: relative;
+	}
+
+	.track:after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		border: 1px solid black;
+		top: 0;
+		right: 2%;
+	}
+
+	.track:last-of-type {
+		border-bottom-style: dotted;
+	}
+
+	.track .race-cars {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 3rem;
+		//animation: race 5s linear forwards;
+	}
+
+	@keyframes race {
+		0% {right: 88.5%}
+		10% {right: 85.5%}
+		20% {right: 75.5%}
+		30% {right: 65.5%}
+		40% {right: 55.5%}
+		50% {right: 45.5%}
+		60% {right: 35.5%}
+		70% {right: 25.5%}
+		80% {right: 15.5%}
+		90% {right: 5.5%}
+		100% {right: 2%}
+	}
+
+	@keyframes blingText {
+		0% {color: #ff0000}
+		50% {color: #3366ff}
+		100% {color: #ff0000}
+	}
+
+	.barrier-draw {
+		padding: .5%;	
+		background: black;
+		color: white;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	#control-field {
+		margin-bottom: 0;
+	}
+
+	#game-title {
+		padding-bottom: 2%;
+		font-size: 2rem;
+	}
+	
+	#race-game-btns .row .col-lg-2 {
+		margin-bottom: 20px;
+	}
+	
+	#race-game-btns .row .col-lg-2:nth-child(2) #stake-container label{
+		font-size: 1rem
+	}
+	
+	#betAndStart, #playAgain{
+		display: flex
+	}
+	
+	.col-lg-2 select, .col-lg-2 #stake-container, .col-lg-2 button {
+		margin: auto;
+	} 
+	
+	.col-lg-2 p {
+		text-align: center;
+		font-size: 1.5rem;
+	}
+	
+	.col-lg-2 button {
+		width: 90%;
+	}
+	
+	#toBeAnnounced {
+		text-align: center;
+	}
+	
+	.col-lg-2:nth-child(5) p {
+		margin-bottom: 1%;
+		display: inline;
+	}
+	
+	#stake-container {		
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+	
+	#stake-container label, #stake-container p {
+		flex: 1;
+		font-size: 1.5rem;
+	}
+	
+	#stake-container input {
+		flex: 3;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	
+	select, .btn-primary, #balance, #result, #pay {
+		display: inline-block;
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+
+	#track-wrapper {
+		background: #009933;
+	}
+
+	.track {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 3rem;
+		border-top-style: dotted;
+		position: relative;
+	}
+
+	.track:after {
+		content: "";
+		position: absolute;
+		height: 100%;
+		border: 1px solid black;
+		top: 0;
+		right: 2%;
+	}
+
+	.track:last-of-type {
+		border-bottom-style: dotted;
+	}
+
+	.track .race-cars {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 3rem;
+		//animation: race 5s linear forwards;
+	}
+
+	@keyframes race {
+		0% {right: 88%}
+		10% {right: 85.5%}
+		20% {right: 75.5%}
+		30% {right: 65.5%}
+		40% {right: 55.5%}
+		50% {right: 45.5%}
+		60% {right: 35.5%}
+		70% {right: 25.5%}
+		80% {right: 15.5%}
+		90% {right: 5.5%}
+		100% {right: 2%}
+	}
+
+	@keyframes blingText {
+		0% {color: #ff0000}
+		50% {color: #3366ff}
+		100% {color: #ff0000}
+	}
+
+	.barrier-draw {
+		padding: .5%;	
+		background: black;
+		color: white;
+	}
+}
+
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="jumbotron" id="control-field">	
+			<div id="race-game-btns" class="container-fluid">		
+				<h2 class="text-center" id="game-title">The 10th Font Awesome Cup</h2>
+				<div class="row">
+					<div class="col-lg-2 col-sm-4 col-xs-6">
+						<select class="form-control">
+							<option selected>Your choice?</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+					<div class="col-lg-2 col-sm-4 col-xs-6">
+						<div id="stake-container">
+							<input id="stake" type="range" step="5" min="0" max="100" value=0></input>
+							<p>Stake: $<span id="stake-value">0</span></p>
+						</div>
+					</div>
+					<div class="col-lg-2 col-sm-4 col-xs-6" id="betAndStart">
+						<button class="btn btn-danger">BET & START</button>
+					</div>
+
+					<div class="col-lg-2 col-sm-4 col-xs-6" id="toBeAnnounced">
+						<p id="result">To be announced</p>
+					</div>
+					<div class="col-lg-2 col-sm-4 col-xs-6">
+						<p id='pay'>Good luck</p>
+						<p id="money">Your balance</p>
+					</div>
+					<div class="col-lg-2 col-sm-4 col-xs-6" id="playAgain">
+						<button class="btn btn-success">Play Again</button>
+					</div>			
+				</div>
+			</div>
+		</div>
+		
+		<div id="track-wrapper">
+			<div class="track">
+				<span class="barrier-draw">1</span><i id="car-one" class="race-cars fa">&#xf193</i>
+			</div>
+			<div class="track">
+				<span class="barrier-draw">2</span><i id="car-two" class="race-cars fa">&#xf0f9</i>
+			</div>
+			<div class="track">
+				<span class="barrier-draw">3</span><i id="car-three" class="race-cars fa">&#xf206</i>
+			</div>
+			<div class="track">
+				<span class="barrier-draw">4</span><i id="car-four" class="race-cars fa">&#xf0fb</i>
+			</div>
+			<div class="track">
+				<span class="barrier-draw">5</span><i id="car-five" class="race-cars fa">&#xf07a</i>
+			</div>
+		</div>
+	</div> <!-- end wrapper -->
+</div>
+<script>
+
+var carOne = document.querySelector('#car-one');
+var carTwo = document.querySelector('#car-two');
+var carThree = document.querySelector('#car-three');
+var carFour = document.querySelector('#car-four');
+var carFive = document.querySelector('#car-five');
+var carsArray = ["&#xf193", "&#xf0f9", "&#xf206", "&#xf0fb", "&#xf07a"];
+var drawArr = [];
+var randomPos = function(){return Math.floor((Math.random() * 5))};
+var timingFunction = ['ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out'];
+
+document.querySelector("#stake").addEventListener('change', () => 
+	document.querySelector("#stake-value").innerHTML = document.querySelector("#stake").value
+);
+
+var account = (function(){
+	var balance;
+	if(localStorage.balance){
+		balance = ~~localStorage.balance;
+	} else {
+		balance = 100;
+	}
+	return {
+		print: function(){return balance},
+		win: function(){return balance += Number(document.querySelector("#stake-value").innerHTML) * 4},
+		lose: function(){return balance -= document.querySelector("#stake-value").innerHTML}
+	}
+})()
+
+document.querySelector("#money").innerHTML = 'Balance: $' + account.print();
+
+if (typeof(Storage) !== "undefined") {
+    localStorage.balance = 100;
+} else {
+    // Sorry! No Web Storage support..
+}
+
+if(drawArr.length == 0){
+	drawArr.push(randomPos());
+}
+
+function x(){
+	let newEntry = randomPos();
+	if (drawArr.indexOf(newEntry) == -1){				
+		drawArr.push(newEntry);		
+		return drawArr;
+	} else {		
+		return x();
+	}
+}
+
+for(let i=0; i<4; i++){
+	x();
+}
+
+for(let i=0; i<drawArr.length; i++){
+	document.querySelectorAll(".race-cars")[i].innerHTML = carsArray[drawArr[i]]
+}
+
+function randomDuration(){
+	let duration = (Math.random() * 7);
+	if (duration < 5) {
+		return randomDuration();
+	}
+	return duration;	
+}
+
+function getTimingFunction(){
+	return timingFunction[Math.floor(Math.random() * timingFunction.length)]
+}
+
+document.querySelector("select").addEventListener('change', () => {
+	if(document.querySelector("select").value != "Your Choice?") {
+		document.querySelector(".btn-danger").addEventListener('click', () => {	
+			let userChoice = document.querySelector("select").value;
+			
+			document.querySelectorAll(".race-cars").forEach( (car) => {
+				car.style.animation = `race ${getTimingFunction()} forwards`;
+				car.style.animationDuration = `${randomDuration()}s`;
+			});
+			
+			let ranking = [];
+			document.querySelectorAll(".race-cars").forEach( (car) => {		
+				ranking.push(car.style.animationDuration);
+			});
+			ranking = ranking.map( rank => rank.replace('s', '')); 
+			ranking = ranking.map( rank => Number(rank));	
+			let newRanking = ranking.slice();
+			newRanking = newRanking.sort();	
+			let indexOfFirst = ranking.indexOf(newRanking[0]);
+			let indexOfLast = ranking.indexOf(newRanking[newRanking.length-1]);	
+			console.log(indexOfLast);
+			document.querySelectorAll(".race-cars")[indexOfLast].addEventListener('animationend', endCallback);
+			document.querySelectorAll(".race-cars")[indexOfLast].addEventListener('webkitAnimationend', endCallback);
+			function endCallback(){
+				document.querySelector("#result").innerHTML = `Car ${indexOfFirst+1} won!!!`;
+				if(document.querySelector("#result").innerHTML != ''){
+					document.querySelector("#result").style.fontWeight = 900;
+					document.querySelector("#result").style.textShadow = '1px 1px white';
+					document.querySelector("#result").style.animation = "blingText 1s linear infinite";
+					
+					if(userChoice == indexOfFirst+1) {
+						document.querySelector("#pay").innerHTML = 'You Win';
+						document.querySelector("#money").innerHTML = 'Balance: ' + account.win();
+						localStorage.balance = account.print();
+					} else {
+						document.querySelector("#pay").innerHTML = 'You Lose'
+						document.querySelector("#money").innerHTML = 'Balance: ' + account.lose();
+						localStorage.balance = account.print();
+					}
+				}
+			}
+		})
+	}
+});
+
+document.querySelector(".btn-success").addEventListener('click', () => {
+	window.location.assign(window.location.href);
+});
+</script>
+</body>
+</html>
